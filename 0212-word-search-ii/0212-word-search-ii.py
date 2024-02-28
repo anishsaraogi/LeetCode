@@ -58,6 +58,7 @@ class Solution:
 
         for r in range(ROWS):
             for c in range(COLS):
-                dfs(r, c, root, "")
+                if board[r][c] in root.children:
+                    dfs(r, c, root, "")
 
         return list(res)
