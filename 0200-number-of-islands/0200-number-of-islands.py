@@ -1,7 +1,6 @@
 class Solution:
     def numIslands(self, grid: List[List[str]]) -> int:
         visited = set()
-        rows, cols = len(grid), len(grid[0])
         ans = 0
         
         def dfs(r, c):
