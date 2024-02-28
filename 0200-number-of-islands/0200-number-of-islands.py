@@ -6,8 +6,8 @@ class Solution:
         
         def dfs(r, c):
             if ((r,c) in visited or
-            r not in range(rows) or
-            c not in range(cols) or
+            r not in range(len(grid)) or
+            c not in range(len(grid[0])) or
             grid[r][c] == "0"):
                 return
             visited.add((r,c))
@@ -16,8 +16,8 @@ class Solution:
             dfs(r, c + 1)
             dfs(r, c - 1)
             
-        for r in range(rows):
-            for c in range(cols):
+        for r in range(len(grid)):
+            for c in range(len(grid[0])):
                 if grid[r][c] == "1" and (r,c) not in visited:
                     ans += 1
                     dfs(r, c)
